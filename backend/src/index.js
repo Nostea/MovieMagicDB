@@ -1,13 +1,16 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 import { MoviesDAO } from "./db-access/moviesDAO.js";
 import { FavoritesDAO } from "./db-access/favoritesDAO.js";
 import { ObjectId } from "mongodb";
 
 const app = express();
+app.use(express.static("data/images")); // für bilder anzeigen
 
 app.use(morgan("dev"));
+app.use(cors());
 app.use(express.json()); // body parser
 
 // app.get("/", (req, res) => res.json({ hello: "world" }));   //el trash
