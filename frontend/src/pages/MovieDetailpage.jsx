@@ -39,7 +39,7 @@ const MovieDetailpage = () => {
           <NavbarBackArrow />
         </div>
 
-        <section className=" bg-deep-blue-1000 text-slate-50 flex flex-row gap-8 py-8 px-8">
+        <section className=" bg-deep-blue-1000 text-slate-50 flex flex-row gap-8 py-8 px-8 h-screen">
           <div className="">
             {movie.poster ? (
               <img src={movie?.poster.replace("http://", "https://")} alt="movie cover" onError={addDefaultImg} className="rounded min-w-60" />
@@ -50,7 +50,7 @@ const MovieDetailpage = () => {
           <div className="flex flex-col justify-start py-8">
             <div className="flex flex-row justify-between content-center">
               <h1 className=" text-3xl pb-4">{movie.title}</h1>
-              <FavoriteThis />
+              <FavoriteThis movieId={movie._id} movieTitle={movie.title} />
             </div>
 
             <p className="pb-2 text-violet-300 font-light">

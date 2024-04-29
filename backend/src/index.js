@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(cors());
 app.use(express.json()); // body parser
 
-// app.get("/", (req, res) => res.json({ hello: "world" }));   //el trash
+app.get("/", (req, res) => res.json({ hello: "world" })); //el trash
 
 app.get("/api/v1/movies", (req, res) => {
   MoviesDAO.findAll()
@@ -57,6 +57,7 @@ app.post("/api/v1/movies", (req, res) => {
 app.get("/api/v1/favorites", (req, res) => {
   FavoritesDAO.findAll()
     .then((favorites) => res.json(favorites))
+
     .catch((err) => {
       console.log(err);
       res.status(500).json({ err, message: "Could not find favorites" });

@@ -8,9 +8,6 @@ const Home = () => {
     <div className=" bg-deep-blue-1000">
       <Navbar />
       <MovieFeed />
-      <Link to="/movies/add">
-        <button className=" bg-slate-300 p-2">Add Movie</button>
-      </Link>
     </div>
   );
 };

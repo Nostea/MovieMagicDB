@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { backendUrl } from "../api/api";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
 
 const MovieFeed = () => {
   const [movies, setMovies] = useState([]);
@@ -15,7 +16,14 @@ const MovieFeed = () => {
   return (
     <>
       <div className=" py-4 px-8">
-        <h1 className=" text-xl uppercase text-slate-50 pb-4 font-bold">Movie Selection</h1>
+        <div className="flex flex-row justify-between content-center">
+          <h1 className=" text-xl uppercase text-slate-50 pb-4 font-bold">Movie Selection</h1>
+
+          <Link to="/movies/add">
+            <button className=" bg-violet-300 rounded-lg p-2">Add Movie</button>
+          </Link>
+        </div>
+
         <div className="grid grid-cols-2 gap-4">
           {movies.slice(0, cardLimit).map((movieItem) => (
             <MovieCard

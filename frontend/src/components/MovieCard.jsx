@@ -12,11 +12,10 @@ const MovieCard = ({ movie, poster, title, id, year, rated, runtime, director, m
         <img src="/img/Placeholder_poster.jpg" alt="placeholder" />
       )}
       <div className="px-6 py-4">
-        <h3 className=" text-2xl font-extrabold">{title}</h3>
-        <p>{year}</p>
-        <p>{rated}</p>
-        <p>{runtime}</p>
-        <p>{director}</p>
+        <h3 className=" text-2xl font-extrabold pb-4">{title}</h3>
+        <p className=" text-violet-300 opacity-80 pb-4">
+          {director} / {year} / {rated} / {runtime}min
+        </p>
         <p className=" text-violet-200">Metacritic: {metacriticRating}</p>
         <div className=" hover:text-violet-400 text-mint-400">
           <Link to={`/movies/${movie._id}`}>More Details</Link>
