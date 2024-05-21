@@ -88,5 +88,5 @@ app.delete("/api/v1/favorites/:movieId", (req, res) => {
     });
 });
 
-const PORT = 3006;
+const PORT = process.env.PORT || 3006;
 app.listen(PORT, () => console.log("Server listening at port", PORT));

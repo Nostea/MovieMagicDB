@@ -16,7 +16,6 @@ const MyFavoritesPage = () => {
       .catch((err) => console.error("Error while fetching", err));
   }, []);
 
-  /*
   useEffect(() => {
     const emptyArray = [];
     movieFavorites.forEach((item) => {
@@ -26,7 +25,7 @@ const MyFavoritesPage = () => {
       // ! an dieser Stelle
     });
   }, [movieFavorites]);
-*/
+
   const fetchMovieDetails = (movieID) => {
     fetch(`${backendUrl}/api/v1/movies/${movieID.movieId}`);
   };
